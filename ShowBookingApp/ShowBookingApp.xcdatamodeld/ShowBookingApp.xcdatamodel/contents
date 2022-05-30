@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Bus" representedClassName=".Bus" syncable="YES">
+        <attribute name="arrival" optional="YES" attributeType="String"/>
+        <attribute name="arrivalDateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="busID" optional="YES" attributeType="String"/>
+        <attribute name="departure" optional="YES" attributeType="String"/>
+        <attribute name="departureDateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="busToSeat" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Seat" inverseName="seatToBus" inverseEntity="Seat"/>
+        <relationship name="busToUser" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="userToBus" inverseEntity="User"/>
+    </entity>
+    <entity name="Seat" representedClassName=".Seat" syncable="YES">
+        <attribute name="col" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="isBooked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="row" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="section" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="seatToBus" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Bus" inverseName="busToSeat" inverseEntity="Bus"/>
+        <relationship name="seatToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
+        <attribute name="hasMembership" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="username" attributeType="String"/>
+        <relationship name="userToBus" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bus" inverseName="busToUser" inverseEntity="Bus"/>
+    </entity>
+    <elements>
+        <element name="Bus" positionX="-54" positionY="9" width="128" height="134"/>
+        <element name="Seat" positionX="-36" positionY="54" width="128" height="134"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="74"/>
+    </elements>
+</model>
