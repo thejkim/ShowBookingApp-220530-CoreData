@@ -24,8 +24,8 @@
         <relationship name="userToBus" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bus" inverseName="busToUser" inverseEntity="Bus"/>
     </entity>
     <elements>
-        <element name="Bus" positionX="-54" positionY="9" width="128" height="134"/>
-        <element name="Seat" positionX="-36" positionY="54" width="128" height="134"/>
+        <element name="Bus" positionX="440.739990234375" positionY="17.59429931640625" width="128" height="134"/>
+        <element name="Seat" positionX="-2.9044189453125" positionY="325.71923828125" width="128" height="134"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="74"/>
     </elements>
 </model>

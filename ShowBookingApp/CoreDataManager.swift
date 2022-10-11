@@ -13,6 +13,8 @@ class CoreDataManager {
     static let sharedManager = CoreDataManager() // Singleton
     private var managedContext: NSManagedObjectContext
     private var seatEntity: NSEntityDescription
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
 
 
     private init() {
@@ -20,7 +22,6 @@ class CoreDataManager {
         seatEntity = NSEntityDescription.entity(forEntityName: "Seat", in: managedContext)!
     }
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     func createSeatRecord(with data: Dictionary<String, Any>) -> Seat {
         print("\(#function) seat created")
